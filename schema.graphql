@@ -1,6 +1,7 @@
-#type Mutation {
+type Mutation {
 #    createUser(user: String): CreateUserResponse!
-#}
+    createUser(user: String): String!
+}
 
 type Query {
     user(id: ID!): User
