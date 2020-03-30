@@ -2,7 +2,7 @@
 export const resolvers = {
     Query: {
         user: (_, { id }, { dataSources }) => dataSources.users.byId(id),
-        users: (_, args, ___) => args
+        users: (_, __, { dataSources }) => dataSources.users.list(__)
     },
 
     // CreateUserResponse: {

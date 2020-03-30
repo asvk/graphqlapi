@@ -11,7 +11,11 @@ export const UsersApi = (collection:Collection): any => {
     }
 
     return {
-        byId: async (id: string) => await dataLoaders.byId.load(id)
+        byId: async (id: string) => await dataLoaders.byId.load(id),
+        byIds: async (ids: string[]) => await dataLoaders.byId.loadMany(ids),
+        list: async (args: any) => {
+            return await collection.find().toArray();
+        }
     }
 
 }
